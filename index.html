@@ -13,6 +13,17 @@
             color: white;
             }
             
+            .source {
+                
+                width: 811px;
+                
+                position: relative;
+                margin: 0 auto;
+                color: white;
+                text-align: center;
+                margin-top: 30px;
+            }
+            
             .content {
                 background-image: url(bg.png);
                 width: 811px;
@@ -39,6 +50,16 @@
                 width: 100px;
                 height: 73px;
                 background-image: url(repeat.png);
+            }
+            small {
+            font-size: 0.7rem;
+            }
+            p span {
+            
+            background-color: white;
+            }
+            p span.odd {
+            background-color: #C7D7EE;
             }
         </style>
         <script>
@@ -197,26 +218,34 @@
 
             function randomText(arr) {
                 var idx = getRandomInt(0, arr.length - 1);
-                return arr[idx];
+                return '<small>('+(idx+1)+')</small>&nbsp;'+arr[idx];
             }
 
             function pickText() {
                 var result = '';
                 for(var i = 0; i < talks.length; i++) {
-                    result += randomText(talks[i]) + ' ';
+                    var text = randomText(talks[i]);
+                    
+                    if(i % 2 == 1) {text = '<span class="odd">'+text+'</span>'}
+                    else {text = '<span>'+text+'</span>'}
+                    
+                    result += text + ' ';
                 }
 
                 return result;
             }
-
-            document.addEventListener("DOMContentLoaded", function() {
+            
+            function regenerateText() {
                 var text = pickText();
                 document.querySelector('.content p').innerHTML = text;
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                regenerateText();
                 
                 document.querySelector('.content a').addEventListener('click', function (e) {
                     e.preventDefault();
-                    var text = pickText();
-                    document.querySelector('.content p').innerHTML = text;
+                    regenerateText();
                 })
             });
         </script>
@@ -227,5 +256,8 @@
             <p>Korwinator 9000</p>
             <a href="#">&nbsp;</a>
         </div>
+        <div class="source">
+            Źródło:<br/>
+            <img src="source.png"/>
     </body>
 </html>
