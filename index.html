@@ -1,0 +1,229 @@
+<html>
+    <head>
+        <title>Korwinator 9000</title>
+        <style>
+            body {
+                background: black;
+            }
+            
+            h1 {
+            text-align: center;
+            color: white;
+            }
+            
+            .content {
+                background-image: url(bg.png);
+                width: 811px;
+                height: 586px;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            .content p {
+                padding: 5px;
+                margin: 0;
+                
+                width: 277px;
+                height: 147px;
+                left: 255px;
+                top: 281px;
+                position: absolute;
+                background: white;
+            }
+            .content a {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 100px;
+                height: 73px;
+                background-image: url(repeat.png);
+            }
+        </style>
+        <script>
+            var talks = [
+                [
+                    'Proszę zwrócić uwagę, że',
+                    'I tak mam trzy razy mniej czasu, więc proszę mi pozwolić powiedzieć:',
+                    'Państwo się nie śmieją, ale',
+                    'Ja nie potrzebowałem edukacji seksualnej, żeby wiedzeić, że',
+                    'No niestety:',
+                    'Gdzie leży przyczyna problemu? Ja państwu powiem:',
+                    'Państwo chyba nie wiedzą, że',
+                    'Oświadczam kategorycznie:',
+                    'Powtarzam:',
+                    'Powiedzmy to z całą mocą:',
+                    'W Polsce dzisiaj',
+                    'Państwo chyba nie zdają sobie sprawy',
+                    'To ja przepraszam bardzo:',
+                    'Otóż nie wiem, czy pan wie, że',
+                    'Yyyyyy...',
+                    'Ja chcę powiedzieć jedną rzecz:',
+                    'Trzeba powiedzieć jasno:',
+                    'Jak powiedział wybitny krakowianin Stanisław Lem,',
+                    'Proszę mnie dobrze zrozumieć',
+                    'Ja chciałem państwu przypomnieć, że',
+                    'Niech państwo nie mają złudzeń: ',
+                    'Powiedzmy to wyraźnie',
+                ],
+                [
+                    'właściciele niewolników',
+                    'związkowcy',
+                    'trockiści',
+                    'tak zwane dzieci kwiaty',
+                    'rozmaici urzędnicy',
+                    'federaści',
+                    'etatyści',
+                    'ci durnie i złodzieje',
+                    'ludzie wybrani głosami meneli spod budki z piwem',
+                    'socjaliści pobożni',
+                    'socjaliści bezbożni',
+                    'komuniści z krzyżem w zębach',
+                    'agenci służb obcych',
+                    'członkowie Bandy Czworga',
+                    'pseudo-masoni z Wielkiego Wschodu Francji',
+                    'Przedstawiciele czerwonej chołoty',
+                    'ci wszyscy (tfu!) geje',
+                    'funkcjonariusze reżymowej telewizji',
+                    'tak zwani ekonomiści',
+                    'ci wszyscy (tfu!) demokraci',
+                    'agenci bezpieki',
+                    'feminazistki',
+                ],
+                [
+                    'po przeczytaniu <em>Manifestu komunistycznego</em>',
+                    'którymi się brzydzę',
+                    'których nienawidzę',
+                    'z okolic "Gazety Wyborczej"',
+                    'czyli taka żydokomuna',
+                    'odkąg zniesiono karę śmierci',
+                    'którymi pogardzam',
+                    'których miejsce w normalnym kraju jest w więzieniu',
+                    'na polecenie Brukseli',
+                    'posłusznie',
+                    'bezmyślnie',
+                    'z nieprawdopodobną pogardą dla człowieka',
+                    'za pieniądze podatników',
+                    'zgodnie z ideologią LGBTQZ',
+                    'za wszelką cenę',
+                    'zupełnie bezkarnie',
+                    'całkowicie bezczelnie',
+                    'o poglądach na lewo od komunizmu',
+                    'celowo i świadomie',
+                    'z premedytacją',
+                    'od czasów Okrągłego Stołu',
+                    'w ramach postępu',
+                ],
+                [
+                    'udają homoseksualistów',
+                    'niszczą rodzinę',
+                    'idą do polityki',
+                    'zakazują góralom robienia oscypków',
+                    'ogranizują paraolimpiady',
+                    'wprowadzaja ustrój w który raz na cztery lata można wybrać sobie pana',
+                    'ustawiaja fotoradary',
+                    'wprowadzają dotacje',
+                    'wydzielają buspasy',
+                    'podnoszą wiek emerytalny',
+                    'rżną głupa',
+                    'odbierają dzieci rodzicom',
+                    'wprowadzają absurdalne przepisy',
+                    'umieszczają dzieci w szkołach koedukacyjnych',
+                    'wprowadzają parytety',
+                    'nawołują do podniesienia podatków',
+                    'próbują wyrzucić kierowców z miast',
+                    'próbują skłócić Polskę z Rosją',
+                    'głoszą brednię o globalnym ociepleniu',
+                    'zakazuja posiadania broni',
+                    'nie dopuszczają prawdy do władzy',
+                    'uczą dzieci homoseksualizmu',
+                ],
+                [
+                    'żeby poddawać wszystkich tresurze',
+                    'bo taka jest ich natura',
+                    'bo chcą wszystko kontrolować',
+                    'bo nie rozumieją, że socjalizm nie działa',
+                    'żeby wreszcie zapanował socjalizm',
+                    'dokladnie tak jak tow. Janosik',
+                    'zamiast pozwolić ludziom zarabiać',
+                    'żeby wyrwać kobiety z domu',
+                    'bo to jest w interesie tak zwanych ludzi pracy',
+                    'zamiast pozwolić decydować konsumentowi',
+                    'żeby nie opłacało się mieć dzieci',
+                    'zamiast obniżyć podatki',
+                    'bo nie rozumieją, że selekcja naturalna jest czymś dobrym',
+                    'żeby mężczyźni przestali być agresywni',
+                    'bo dzięki temu mogą brać łapówki',
+                    'bo dzięki temu mogą kraść',
+                    'bo dostajaza to pieniądze',
+                    'bo tak się uczy w państwowej szkole',
+                    'bo bez tego (tfu!) demokracja nie może istnieć',
+                    'bo głupich jest więcej niż mądrych',
+                    'bo chcą stworzyć raj na ziemi',
+                    'bo chcą niszczyć cywilizację białego człowieka',
+                ],
+                [
+                    'co ma resztą tyle samo sensu, co zawody w szachach dla debili',
+                    'co zostało dokładnie zaplanowane w Magalence przez śp. generała Kiszczka',
+                    'i trzeba być idiotą, żeby ten system popierać',
+                    'ale nawet ja neszcze dożyję normalnych czasów',
+                    'co dowodzi, że wyskrobano nie tych co trzeba',
+                    'a zwykłym ludziom wmaiwaja, ze im coś "dadzą"',
+                    '- cóż: chcieliście (tfu!) demokracji, to macie',
+                    'dlatego trzeba zlikwidować koryto, a nie zmienić świnie',
+                    'a wystarczyłoby przestać wypłacać zasiłki',
+                    'podczas gdy normalni ludzie uważani są za dziwaków',
+                    'co w wieku XIX po prostu by wyśmiano',
+                    '- dlatego w społeczeństwie jest równość, a powinno być rozwarstwienie',
+                    'co prowadzi Polskę do katastrofy',
+                    '- dlatego trzeba przywrócić normalność',
+                    'ale w wolnej Polsce pójdą siedzieć',
+                    'przez kolejne kadencje',
+                    'o czym się nie mówi',
+                    'i właśnie dlatego Europa umiera',
+                    'ale przyjdą muzułmanie i zrobią porządek',
+                    '- tak samo zresztą jak za Hitlera',
+                    '- proszę zobaczyć, co sidzieje na Zachodzie jeśli mi państwo nie wierzą',
+                    'co lat temu sto nikomu nie przyszłoby nawet do głowy',
+                ],
+            ];
+
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function randomText(arr) {
+                var idx = getRandomInt(0, arr.length - 1);
+                return arr[idx];
+            }
+
+            function pickText() {
+                var result = '';
+                for(var i = 0; i < talks.length; i++) {
+                    result += randomText(talks[i]) + ' ';
+                }
+
+                return result;
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                var text = pickText();
+                document.querySelector('.content p').innerHTML = text;
+                
+                document.querySelector('.content a').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var text = pickText();
+                    document.querySelector('.content p').innerHTML = text;
+                })
+            });
+        </script>
+    </head>
+    <body>
+    <h1>Korwinator 9000</h1>
+        <div class="content">
+            <p>Korwinator 9000</p>
+            <a href="#">&nbsp;</a>
+        </div>
+    </body>
+</html>
